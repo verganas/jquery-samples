@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Level 2 Propagation Example</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            $('*').each(function () {
+                var current = this;
+                this.addEventListener('click', function (event) {
+                    console.log('Capture for ' + current.tagName + '#' + current.id +
+                    ' target is ' + event.target.id);
+                }, true);
+                this.addEventListener('click', function (event) {
+                    console.log('Bubble for ' + current.tagName + '#' + current.id +
+                    ' target is ' + event.target.id);
+                }, false);
+            });
+        });
+    </script>
+</head>
+
+<body id="greatgrandpa">
+<div id="grandpa">
+    <div id="pops">
+        <button id="example"> Click me!</button>
+    </div>
+</div>
+<div id="console"></div>
+</body>
+
+</html>

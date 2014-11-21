@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Level 0 Bubbling Example</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('*').each(function () {
+                var current = this;
+                this.onclick = function (event) {
+                    if (!event) event = window.event;
+                    var target = (event.target) ? event.target : event.srcElement;
+                    console.log('For ' + current.tagName + '#' + current.id + ' target is ' + target.tagName + '#' + target.id);
+                };
+            });
+        });
+    </script>
+</head>
+
+<body id="greatgrandpa">
+<div id="grandpa">
+    <div id="pops">
+        <button id="example" > Click me! </button>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Events Example</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#example')
+                    .bind('click', function (event) {
+                        console.log('BOOM once!');
+                    })
+                    .bind('click', function (event) {
+                        console.log('BOOM twice!');
+                    })
+                    .bind('click', function (event) {
+                        console.log('BOOM three times!');
+                    });
+        });
+    </script>
+</head>
+
+<body>
+<button id="example"> Click me!</button>
+
+</body>
+
+</html>

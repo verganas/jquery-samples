@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <!-- Demonstrate that append moves the element -->
+    <a class="appendMe">Append me</a>
+    <p class="appendToMe">
+        <span>"Append me" link should be moved and appended after this:</span>
+
+    </p>
+    <button id="doit">Click me</button>
+
+    <script>
+        jQuery.noConflict();
+        jQuery(function($) {
+            $("#doit").click(function(){
+                $("p.appendToMe").append($("a.appendMe"));
+            });
+        });
+
+    </script>
+</body>
+</html>

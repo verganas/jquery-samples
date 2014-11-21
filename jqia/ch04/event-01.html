@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Level 0 Events Example</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#example')[0].onmouseover = function(event) {
+                console.log('Crackle!');
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <button id="example" onclick="console.log('BOOM!');">Click me</button>
+</body>
+
+</html>
